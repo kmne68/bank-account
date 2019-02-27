@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Emery_assignment4
 {
-    class CheckingAccount
+    class CheckingAccount : BankAccount
     {
+        public CheckingAccount() : base()
+        {
+            
+
+        }
     }
 }

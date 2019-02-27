@@ -201,7 +201,7 @@
             this.btn_show.Location = new System.Drawing.Point(467, 357);
             this.btn_show.Margin = new System.Windows.Forms.Padding(4);
             this.btn_show.Name = "btn_show";
-            this.btn_show.Size = new System.Drawing.Size(100, 28);
+            this.btn_show.Size = new System.Drawing.Size(109, 28);
             this.btn_show.TabIndex = 17;
             this.btn_show.Text = "Show Balance";
             this.btn_show.UseVisualStyleBackColor = true;
@@ -209,7 +209,7 @@
             // 
             // btn_print
             // 
-            this.btn_print.Location = new System.Drawing.Point(575, 357);
+            this.btn_print.Location = new System.Drawing.Point(584, 357);
             this.btn_print.Margin = new System.Windows.Forms.Padding(4);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(100, 28);
@@ -220,7 +220,7 @@
             // 
             // btn_clear
             // 
-            this.btn_clear.Location = new System.Drawing.Point(683, 357);
+            this.btn_clear.Location = new System.Drawing.Point(692, 357);
             this.btn_clear.Margin = new System.Windows.Forms.Padding(4);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(100, 28);
@@ -231,7 +231,7 @@
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(791, 357);
+            this.btn_close.Location = new System.Drawing.Point(800, 357);
             this.btn_close.Margin = new System.Windows.Forms.Padding(4);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(100, 28);

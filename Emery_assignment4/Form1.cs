@@ -34,6 +34,7 @@ namespace Emery_assignment4
 
         private void btn_show_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("", "Meramec Online Banking System", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -106,8 +107,15 @@ namespace Emery_assignment4
                     accountFirstName = tb_fName.Text;
                     accountLastName = tb_lName.Text;
 
-                    MessageBox.Show("Customer " + accountFirstName + " " +
-                        accountLastName + " has $500 in the " + cb_accountTypes.SelectedItem.ToString() + " account.");
+                    if (selectedActivity == 1 || selectedActivity == 2)
+                    {
+                        MessageBox.Show("Customer " + accountFirstName + " " +
+                            accountLastName + " has $500 in the " + cb_accountTypes.SelectedItem.ToString() + " account.");
+                    }
+                    else if (selectedActivity == 3 || selectedActivity == 4)
+                    {
+                        MessageBox.Show("Customer " + accountFirstName + " " + accountLastName + " does not have a " + cb_accountTypes.SelectedItem.ToString() + " account.");
+                    }
                 }
             }
             catch (Exception ex)
