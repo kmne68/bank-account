@@ -123,6 +123,10 @@ namespace Emery_assignment4
                 MessageBox.Show("An unknown error has occurred.");
             }
 
+            // Test Bank Account owner
+            CheckingAccount test = new CheckingAccount();
+            Console.WriteLine("TEST OUTPUT = " + test.Owner);
+
             EnableButtons();
             gb_customerInfo.Enabled = false;
         }

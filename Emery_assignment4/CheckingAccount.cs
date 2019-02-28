@@ -10,8 +10,15 @@ namespace Emery_assignment4
     {
         public CheckingAccount() : base()
         {
-            
-
         }
+
+
+        public enum CheckingAccountType { Basic, Premier }
+
+        public override string Owner => "Checking-" + base.Owner;
+        
+        public CheckingAccountType AccountType { get; set; }
+
+        
     }
 }

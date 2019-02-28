@@ -11,9 +11,27 @@ namespace Emery_assignment4
         private string accountNumber = "";
         private string firstName = "";
         private string lastName = "";
-        public virtual string owner { get; }
 
-        private decimal balance = 0;
+        public virtual string Owner
+        {
+            get
+            {
+                return "Account # " +
+                    AccountNumber +
+                    "--" +
+                    firstName +
+                    " " +
+                    lastName;
+            }
+        }
+
+        private decimal Balance
+        {
+            get
+            {
+                return 0;
+            }
+        }
 
         public string AccountNumber { get => accountNumber; set => accountNumber = value; }
         public string FirstName { get => firstName; set => firstName = value; }
