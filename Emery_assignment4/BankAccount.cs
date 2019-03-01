@@ -8,31 +8,11 @@ namespace Emery_assignment4
 {
     class BankAccount : IPrintable
     {
+
         private string accountNumber = "";
         private string firstName = "";
         private string lastName = "";
-
-        public virtual string Owner
-        {
-            get
-            {
-                return "Account # " +
-                    AccountNumber +
-                    "--" +
-                    firstName +
-                    " " +
-                    lastName;
-            }
-        }
-
-        private decimal Balance
-        {
-            get
-            {
-                return 0;
-            }
-        }
-
+       
         public string AccountNumber { get => accountNumber; set => accountNumber = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
@@ -51,9 +31,25 @@ namespace Emery_assignment4
         }
 
 
-        public void DepositAmount(decimal deposit)
+        public virtual string Owner
         {
+            get
+            {
+                return "Account # " +
+                    AccountNumber +
+                    "--" +
+                    firstName +
+                    " " +
+                    lastName;
+            }
+        }
 
+        public decimal Balance
+        {
+            get
+            {
+                return 0;
+            }
         }
 
 
@@ -68,6 +64,7 @@ namespace Emery_assignment4
 
             return isPremier;
         }
+
 
         public String PrintStatement()
         {
