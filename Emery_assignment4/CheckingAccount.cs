@@ -47,7 +47,7 @@ namespace Emery_assignment4
         }
 
 
-        public override bool WithdrawAmount(decimal withdrawalAmount, Nullable<int> type)
+        public override bool WithdrawAmount(decimal withdrawalAmount, Enum type)
         {
             bool isPremier = base.WithdrawAmount(withdrawalAmount, type);
 

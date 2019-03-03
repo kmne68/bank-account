@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Emery_assignment4
 {
@@ -53,16 +54,34 @@ namespace Emery_assignment4
         }
 
 
-        public virtual bool WithdrawAmount(decimal withdrawalAmount, Nullable<int> type)
+        public virtual bool WithdrawAmount(decimal withdrawalAmount, Enum type)
         {
-            bool isPremier = false;
-
-            if (type == 1)
-                isPremier = false;
+            bool validWithdrawal = false;
+            if (type.Equals("Premier") && withdrawalAmount > Balance)
+                validWithdrawal = true;
             else
-                isPremier = true;
+            {
+                try
+                {
+                    validWithdrawal = (withdrawalAmount < 300);
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show("Your daily maximum withdrawal is $300 or less. Please enter a smaller amount");
+                }
+                try
+                {
+                    validWithdrawal = (Balance - withdrawalAmount >= 0);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Insufficient Funds");
+                    MessageBox.Show("No negative withdrawal amounts are allowed." +
+                        "Please enter a valid amount.");
+                }
+            }
 
-            return isPremier;
+            return validWithdrawal;
         }
 
 
