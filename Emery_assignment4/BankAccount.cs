@@ -54,9 +54,15 @@ namespace Emery_assignment4
         }
 
 
+        public void DepositAmount(decimal deposit)
+        {
+        }
+
+
         public virtual bool WithdrawAmount(decimal withdrawalAmount, Enum type)
         {
             bool validWithdrawal = false;
+
             if (type.Equals("Premier") && withdrawalAmount > Balance)
                 validWithdrawal = true;
             else

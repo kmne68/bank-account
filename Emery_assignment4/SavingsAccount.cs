@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Emery_assignment4
 {
-    class SavingsAccount
+    class SavingsAccount : BankAccount
     {
     }
 }

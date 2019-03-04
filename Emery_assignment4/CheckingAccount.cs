@@ -12,21 +12,16 @@ namespace Emery_assignment4
 
         private int overdrafts = 0;
 
-        public CheckingAccount() : base()
+        public CheckingAccount(string accountNumber, string firstName, string lastName) :
+            base(accountNumber, firstName, lastName)
         {
         }
 
     
         public enum CheckingAccountType { Basic, Premier }
-
-        public override string Owner => "Checking-" + base.Owner;
-        
         public CheckingAccountType AccountType { get; set; }
 
-        public void DepositAmount(decimal deposit)
-        {
-
-        }
+        public override string Owner => "Checking-" + base.Owner;
 
 
         private int NumberOfOverdrafts
@@ -42,21 +37,19 @@ namespace Emery_assignment4
         {
             get
             {
-                return Balance - OVERDRAFT_FEE;
+                if (WithdrawAmount(, AccountType))
+                {
+                    return Balance - OVERDRAFT_FEE;
+                }
             }
         }
 
 
         public override bool WithdrawAmount(decimal withdrawalAmount, Enum type)
         {
-            bool isPremier = base.WithdrawAmount(withdrawalAmount, type);
+            bool isFeeDue = base.WithdrawAmount(withdrawalAmount, type);
 
-            if (isPremier)
-                isPremier = false;
-            else
-                isPremier = true;
-
-            return isPremier;
+            return isFeeDue;
         }
 
     }

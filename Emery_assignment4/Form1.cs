@@ -12,6 +12,7 @@ namespace Emery_assignment4
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -80,6 +81,7 @@ namespace Emery_assignment4
             int selectedActivity = 0;
             string accountFirstName = "";
             string accountLastName = "";
+
             try
             {
                 if (cb_accountTypes.SelectedIndex > 0)
@@ -124,9 +126,9 @@ namespace Emery_assignment4
             }
 
             // Test Bank Account owner
-            CheckingAccount test = new CheckingAccount();
+            CheckingAccount test = new CheckingAccount("asdf", "asdf" ,"a;sdf");
             Console.WriteLine("TEST OUTPUT = " + test.Owner);
-
+            
             EnableButtons();
             gb_customerInfo.Enabled = false;
         }
@@ -149,7 +151,9 @@ namespace Emery_assignment4
         {
             try
             {
-                FutureFeature();
+                // FutureFeature();
+                decimal withdrawalAmount = 0;
+                withdrawalAmount = Convert.ToDecimal(tb_withdraw.Text);
             }
             catch (NotImplementedException ex)
             {

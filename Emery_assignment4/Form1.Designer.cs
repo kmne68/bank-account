@@ -149,7 +149,7 @@
             // 
             // tb_withdraw
             // 
-            this.tb_withdraw.Location = new System.Drawing.Point(757, 101);
+            this.tb_withdraw.Location = new System.Drawing.Point(757, 108);
             this.tb_withdraw.Margin = new System.Windows.Forms.Padding(4);
             this.tb_withdraw.Name = "tb_withdraw";
             this.tb_withdraw.Size = new System.Drawing.Size(132, 22);
