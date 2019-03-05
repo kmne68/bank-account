@@ -18,6 +18,9 @@ namespace Emery_assignment4
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
 
+        public enum CheckingAccountType { Basic, Premier }
+        public CheckingAccountType AccountType { get; set; }
+
 
         // default constructor
         public BankAccount()

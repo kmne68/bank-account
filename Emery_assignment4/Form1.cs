@@ -17,7 +17,7 @@ namespace Emery_assignment4
         private string accountFirstName = "";
         private string accountLastName = "";
 
-        private CheckingAccount checkingAccount;
+        private BankAccount account;
 
         public Form1()
         {
@@ -84,8 +84,6 @@ namespace Emery_assignment4
         private void btn_welcome_Click(object sender, EventArgs e)
         {
 
-
-
             try
             {
                 if (cb_accountTypes.SelectedIndex > 0)
@@ -130,8 +128,15 @@ namespace Emery_assignment4
             }
 
             // Test Bank Account owner
-            checkingAccount = new CheckingAccount(accountNumber, accountFirstName ,accountLastName);
-            Console.WriteLine("TEST OUTPUT = " + checkingAccount.Owner);
+            if (selectedActivity == 1)
+            {
+                account = new CheckingAccount(accountNumber, accountFirstName, accountLastName);
+                Console.WriteLine("TEST OUTPUT = " + account.Owner);
+            }
+            if (selectedActivity == 2)
+            {
+                account = new SavingsAccount();
+            }
             
             EnableButtons();
             gb_customerInfo.Enabled = false;
@@ -167,7 +172,7 @@ namespace Emery_assignment4
 
             if(selectedActivity == 1)
             {
-                checkingAccount.WithdrawAmount(withdrawalAmount, checkingAccount.AccountType);
+                account.WithdrawAmount(withdrawalAmount, account.AccountType);
             }
         }
 
