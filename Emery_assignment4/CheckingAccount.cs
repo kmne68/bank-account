@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Emery_assignment4
 {
@@ -37,10 +38,7 @@ namespace Emery_assignment4
         {
             get
             {
-                if (WithdrawAmount(, AccountType))
-                {
-                    return Balance - OVERDRAFT_FEE;
-                }
+                return Balance - OVERDRAFT_FEE;
             }
         }
 
@@ -48,7 +46,7 @@ namespace Emery_assignment4
         public override bool WithdrawAmount(decimal withdrawalAmount, Enum type)
         {
             bool isFeeDue = base.WithdrawAmount(withdrawalAmount, type);
-
+            MessageBox.Show("test");
             return isFeeDue;
         }
 

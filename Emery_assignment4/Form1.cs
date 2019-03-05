@@ -12,6 +12,12 @@ namespace Emery_assignment4
 {
     public partial class Form1 : Form
     {
+        private int selectedActivity = 0;
+        private string accountNumber = "";
+        private string accountFirstName = "";
+        private string accountLastName = "";
+
+        private CheckingAccount checkingAccount;
 
         public Form1()
         {
@@ -78,9 +84,7 @@ namespace Emery_assignment4
         private void btn_welcome_Click(object sender, EventArgs e)
         {
 
-            int selectedActivity = 0;
-            string accountFirstName = "";
-            string accountLastName = "";
+
 
             try
             {
@@ -92,7 +96,7 @@ namespace Emery_assignment4
                 {
                     MessageBox.Show("No account type was selected!");
                 }
-                int accountNumber = Convert.ToInt32(mtb_accountNumber.Text);
+                accountNumber = mtb_accountNumber.Text;
                 Console.WriteLine("accountNumber is " + accountNumber);
 
                 //   int accountNumber = Convert.ToInt16(tb_acctnmbr.Text);
@@ -126,8 +130,8 @@ namespace Emery_assignment4
             }
 
             // Test Bank Account owner
-            CheckingAccount test = new CheckingAccount("asdf", "asdf" ,"a;sdf");
-            Console.WriteLine("TEST OUTPUT = " + test.Owner);
+            checkingAccount = new CheckingAccount(accountNumber, accountFirstName ,accountLastName);
+            Console.WriteLine("TEST OUTPUT = " + checkingAccount.Owner);
             
             EnableButtons();
             gb_customerInfo.Enabled = false;
@@ -149,15 +153,21 @@ namespace Emery_assignment4
 
         private void btn_withdraw_Click(object sender, EventArgs e)
         {
+            decimal withdrawalAmount = 0;
+
             try
             {
                 // FutureFeature();
-                decimal withdrawalAmount = 0;
                 withdrawalAmount = Convert.ToDecimal(tb_withdraw.Text);
             }
             catch (NotImplementedException ex)
             {
                 MethodNotImplemented();
+            }
+
+            if(selectedActivity == 1)
+            {
+                checkingAccount.WithdrawAmount(withdrawalAmount, checkingAccount.AccountType);
             }
         }
 
