@@ -94,14 +94,14 @@ namespace Emery_assignment4
         }
 
 
-        public String PrintStatement()
+        public virtual String PrintStatement()
         {
             String result = "";
 
             return result;
         }
 
-        public String ShowBalance()
+        public virtual String ShowBalance()
         {
             String result = "";
 

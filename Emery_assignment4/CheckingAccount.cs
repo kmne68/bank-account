@@ -18,7 +18,7 @@ namespace Emery_assignment4
         {
         }
 
-    
+
         public enum CheckingAccountType { Basic, Premier }
         public CheckingAccountType AccountType { get; set; }
 
@@ -46,8 +46,27 @@ namespace Emery_assignment4
         public override bool WithdrawAmount(decimal withdrawalAmount, Enum type)
         {
             bool isFeeDue = base.WithdrawAmount(withdrawalAmount, type);
-            MessageBox.Show("test");
+
+            if (isFeeDue)
+                overdrafts++;
+            MessageBox.Show("overdrafts = " + overdrafts);
             return isFeeDue;
+        }
+
+
+        public override string PrintStatement()
+        {
+            DateTime today = DateTime.Today;
+            string date = today.ToString("dd/MM/yyyy");
+            string statementString = Owner + " as of " + date + "\n" +
+                "Checking Account balance is " + "$xxx.xx" +
+                "\n" + "Amount of overdraft fee for the month is " +
+                "$XX.XX" + "\n" + "The number of overdrafts is " +
+                overdrafts;
+            MessageBox.Show(statementString);
+
+            return statementString;
+        
         }
 
     }
