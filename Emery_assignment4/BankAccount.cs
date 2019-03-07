@@ -52,7 +52,7 @@ namespace Emery_assignment4
         {
             get
             {
-                return 0;
+                return 273.07M;
             }
         }
 
@@ -64,33 +64,35 @@ namespace Emery_assignment4
 
         public virtual bool WithdrawAmount(decimal withdrawalAmount, Enum type)
         {
-            bool validWithdrawal = false;
+            bool feeIsDue = false;
 
             if (type.Equals("Premier") && withdrawalAmount > Balance)
-                validWithdrawal = true;
+                feeIsDue = true;
             else
             {
                 try
                 {
-                    validWithdrawal = (withdrawalAmount < 300);
+                    if (withdrawalAmount > Balance)
+                        throw new Exception("Withdrawal is too large.");
                 }
-                catch (ArgumentException ex)
+                catch(Exception e)
                 {
-                    MessageBox.Show("Your daily maximum withdrawal is $300 or less. Please enter a smaller amount");
+                    MessageBox.Show("No negative withdrawal amounts are allowed.\n" +
+                        "Insufficient Funds\n" + "Please enter a valid amount.");
                 }
                 try
                 {
-                    validWithdrawal = (Balance - withdrawalAmount >= 0);
+                    if (withdrawalAmount > 300)
+                        throw new Exception("Withdrawal greater than $300.");
                 }
-                catch (Exception ex)
+                catch(Exception e)
                 {
-                    MessageBox.Show("Insufficient Funds");
-                    MessageBox.Show("No negative withdrawal amounts are allowed." +
-                        "Please enter a valid amount.");
+                    MessageBox.Show("Your daily maximum withdrawal is $300 or less. Please enter a smaller amount");
                 }
+
             }
 
-            return validWithdrawal;
+            return feeIsDue;
         }
 
 

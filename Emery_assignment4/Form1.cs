@@ -41,7 +41,8 @@ namespace Emery_assignment4
 
         private void btn_show_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("", "Meramec Online Banking System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string balanceString = account.ShowBalance();
+            MessageBox.Show(balanceString, "Meramec Online Banking System", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -180,7 +181,8 @@ namespace Emery_assignment4
         {
             try
             {
-                account.PrintStatement();
+                string statementString = account.PrintStatement();
+                MessageBox.Show(statementString);
             }
             catch (NotImplementedException ex)
             {

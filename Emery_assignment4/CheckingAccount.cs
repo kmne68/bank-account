@@ -57,16 +57,22 @@ namespace Emery_assignment4
         public override string PrintStatement()
         {
             DateTime today = DateTime.Today;
-            string date = today.ToString("dd/MM/yyyy");
-            string statementString = Owner + " as of " + date + "\n" +
-                "Checking Account balance is " + "$xxx.xx" +
-                "\n" + "Amount of overdraft fee for the month is " +
-                "$XX.XX" + "\n" + "The number of overdrafts is " +
-                overdrafts;
-            MessageBox.Show(statementString);
+            string date = today.ToString("MM/dd/yyyy");
+            string statementString =
+                Owner + " as of " + date + "\n" +
+                "Checking Account balance is $" + Balance + "\n" +
+                "Amount of overdraft fee for the month is " + "$XX.XX" + "\n" +
+                "The number of overdrafts is " + overdrafts;
 
-            return statementString;
-        
+            return statementString;        
+        }
+
+
+        public override string ShowBalance()
+        {
+            //    return base.ShowBalance();
+            return Owner + " has $" + Balance + " in Checking Account.";
+            
         }
 
     }
