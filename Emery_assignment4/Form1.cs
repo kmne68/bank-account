@@ -112,10 +112,11 @@ namespace Emery_assignment4
                     accountFirstName = tb_fName.Text;
                     accountLastName = tb_lName.Text;
 
+                    // Test
                     if (selectedActivity == 1 || selectedActivity == 2)
                     {
                         MessageBox.Show("Customer " + accountFirstName + " " +
-                            accountLastName + " has $500 in the " + cb_accountTypes.SelectedItem.ToString() + " account.");
+                            accountLastName + " has $0.02 in the " + cb_accountTypes.SelectedItem.ToString() + " account.");
                     }
                     else if (selectedActivity == 3 || selectedActivity == 4)
                     {
@@ -132,11 +133,12 @@ namespace Emery_assignment4
             if (selectedActivity == 1)
             {
                 account = new CheckingAccount(accountNumber, accountFirstName, accountLastName);
-                Console.WriteLine("TEST OUTPUT = " + account.Owner);
+                Console.WriteLine("Checking TEST OUTPUT = " + account.Owner);
             }
             if (selectedActivity == 2)
             {
-                account = new SavingsAccount();
+                account = new SavingsAccount(accountNumber, accountFirstName, accountLastName);
+                Console.WriteLine("Saving TEST OUTPUT = " + account.Owner);
             }
             
             EnableButtons();
@@ -146,13 +148,21 @@ namespace Emery_assignment4
 
         private void btn_Deposit_Click(object sender, EventArgs e)
         {
+            decimal depositAmount = 0;
+
             try
             {
-                FutureFeature();
+                // FutureFeature();
+                depositAmount = Convert.ToDecimal(tb_deposit.Text);
             }
             catch (NotImplementedException ex)
             {
                 MethodNotImplemented();
+            }
+
+            if (selectedActivity == 2)
+            {
+                account.DepositAmount(depositAmount);
             }
         }
 

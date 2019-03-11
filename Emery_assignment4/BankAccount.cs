@@ -13,6 +13,7 @@ namespace Emery_assignment4
         private string accountNumber = "";
         private string firstName = "";
         private string lastName = "";
+        private decimal balance = 123.45m;
        
         public string AccountNumber { get => accountNumber; set => accountNumber = value; }
         public string FirstName { get => firstName; set => firstName = value; }
@@ -48,17 +49,12 @@ namespace Emery_assignment4
             }
         }
 
-        public decimal Balance
-        {
-            get
-            {
-                return 273.07M;
-            }
-        }
+        public decimal Balance { get => balance; set => balance = value; }
 
 
         public void DepositAmount(decimal deposit)
         {
+            balance += deposit;
         }
 
 

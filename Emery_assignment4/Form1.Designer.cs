@@ -129,7 +129,7 @@
             this.cb_accountTypes.Margin = new System.Windows.Forms.Padding(4);
             this.cb_accountTypes.Name = "cb_accountTypes";
             this.cb_accountTypes.Size = new System.Drawing.Size(229, 24);
-            this.cb_accountTypes.TabIndex = 8;
+            this.cb_accountTypes.TabIndex = 0;
             // 
             // tb_fName
             // 
@@ -137,7 +137,7 @@
             this.tb_fName.Margin = new System.Windows.Forms.Padding(4);
             this.tb_fName.Name = "tb_fName";
             this.tb_fName.Size = new System.Drawing.Size(132, 22);
-            this.tb_fName.TabIndex = 10;
+            this.tb_fName.TabIndex = 2;
             // 
             // tb_lName
             // 
@@ -145,7 +145,7 @@
             this.tb_lName.Margin = new System.Windows.Forms.Padding(4);
             this.tb_lName.Name = "tb_lName";
             this.tb_lName.Size = new System.Drawing.Size(132, 22);
-            this.tb_lName.TabIndex = 11;
+            this.tb_lName.TabIndex = 3;
             // 
             // tb_withdraw
             // 
@@ -153,7 +153,7 @@
             this.tb_withdraw.Margin = new System.Windows.Forms.Padding(4);
             this.tb_withdraw.Name = "tb_withdraw";
             this.tb_withdraw.Size = new System.Drawing.Size(132, 22);
-            this.tb_withdraw.TabIndex = 12;
+            this.tb_withdraw.TabIndex = 5;
             // 
             // tb_deposit
             // 
@@ -161,7 +161,7 @@
             this.tb_deposit.Margin = new System.Windows.Forms.Padding(4);
             this.tb_deposit.Name = "tb_deposit";
             this.tb_deposit.Size = new System.Drawing.Size(132, 22);
-            this.tb_deposit.TabIndex = 13;
+            this.tb_deposit.TabIndex = 6;
             // 
             // btn_welcome
             // 
@@ -169,7 +169,7 @@
             this.btn_welcome.Margin = new System.Windows.Forms.Padding(4);
             this.btn_welcome.Name = "btn_welcome";
             this.btn_welcome.Size = new System.Drawing.Size(100, 28);
-            this.btn_welcome.TabIndex = 14;
+            this.btn_welcome.TabIndex = 4;
             this.btn_welcome.Text = "Welcome";
             this.btn_welcome.UseVisualStyleBackColor = true;
             this.btn_welcome.Click += new System.EventHandler(this.btn_welcome_Click);
@@ -246,7 +246,7 @@
             this.mtb_accountNumber.Mask = "000000";
             this.mtb_accountNumber.Name = "mtb_accountNumber";
             this.mtb_accountNumber.Size = new System.Drawing.Size(132, 22);
-            this.mtb_accountNumber.TabIndex = 21;
+            this.mtb_accountNumber.TabIndex = 1;
             this.mtb_accountNumber.ValidatingType = typeof(int);
             // 
             // gb_customerInfo

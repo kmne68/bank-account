@@ -11,8 +11,6 @@ namespace Emery_assignment4
     {
         private const decimal OVERDRAFT_FEE = 25.00M;
 
-        private int overdrafts = 0;
-
         public CheckingAccount(string accountNumber, string firstName, string lastName) :
             base(accountNumber, firstName, lastName)
         {
@@ -25,14 +23,7 @@ namespace Emery_assignment4
         public override string Owner => "Checking-" + base.Owner;
 
 
-        private int NumberOfOverdrafts
-        {
-            get
-            {
-                return overdrafts;
-            }
-        }
-
+        private int NumberOfOverdrafts { get; set; } = 0;
 
         private decimal OverDraftFee
         {
@@ -48,8 +39,8 @@ namespace Emery_assignment4
             bool isFeeDue = base.WithdrawAmount(withdrawalAmount, type);
 
             if (isFeeDue)
-                overdrafts++;
-            MessageBox.Show("overdrafts = " + overdrafts);
+                NumberOfOverdrafts++;
+            MessageBox.Show("overdrafts = " + NumberOfOverdrafts);
             return isFeeDue;
         }
 
@@ -62,7 +53,7 @@ namespace Emery_assignment4
                 Owner + " as of " + date + "\n" +
                 "Checking Account balance is $" + Balance + "\n" +
                 "Amount of overdraft fee for the month is " + "$XX.XX" + "\n" +
-                "The number of overdrafts is " + overdrafts;
+                "The number of overdrafts is " + NumberOfOverdrafts;
 
             return statementString;        
         }
